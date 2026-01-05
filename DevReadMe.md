@@ -1,0 +1,1 @@
+## Use pip freeze --local > requirements.txt for dependency updates.
