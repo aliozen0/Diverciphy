@@ -7,7 +7,7 @@
 Distributed Stealth Network for Secure Data Transmission
 
 ## Course
-CENG465 – Computer and Network Security
+CENG465 – Distributed Systems
 
 ## Course Lecturer
 Dr. Hüseyin Temuçin

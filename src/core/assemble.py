@@ -57,6 +57,19 @@ class Assemble:
             print(f"Hata: Anahtar yüklenemedi. Şifre yanlış olabilir. {e}")
             return None
 
+    def send_public_key(self):
+        """
+        Public key always being transmitted as a pem file.
+        Public key always being transmitted from B1 -> A1 (Assembler1 Node to Distributor1 Node)
+        """
+        try:
+            with open(f"keys/{self.__key_name}_public.pem", "rb") as f:
+                public_key_data = f.read()
+            return public_key_data
+        except Exception as e:
+            print(f"Hata: Genel anahtar yüklenemedi. {e}")
+            return None
+
 
 if __name__ == "__main__":
     load_dotenv()
