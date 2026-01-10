@@ -8,28 +8,28 @@ import requests
 
 app = Flask(__name__) #TODO: Create global architecture for app object.
 
-@app.route('/send_shard', methods=['GET', 'POST'])
-def send_shard():
+@app.route('/send_shred', methods=['GET', 'POST'])
+def send_shred():
     load_dotenv()
     machine_type = os.getenv("MACHINE_TYPE", "")
 
     match machine_type:
         case "MASTER":
-            shard = read_file('../../shards/recieved_shard/recieved_shard.pem')
+            shred = read_file('../../shreds/generated_shreds/generated_shred.pem')
 
         case "WORKER":
-            shard = get_latest_file('../../shards/recieved_shards/', file_extension='shard_*.pem')
+            shred = get_latest_file('../../shreds/recieved_shreds/', file_extension='shred_*.pem')
 
         case _:
             return jsonify({"error": "MACHINE_TYPE is not set properly."}), 500
    
-    if not shard:
-        return jsonify({"error": "Shard could not be read!"}), 500
+    if not shred:
+        return jsonify({"error": "shred could not be read!"}), 500
 
     timestamp = datetime.utcnow().isoformat()
 
     if request.method == 'GET':
-        return jsonify({"shard": shard, "timestamp": timestamp}), 200
+        return jsonify({"shred": shred, "timestamp": timestamp}), 200
 
     if request.method == 'POST':
         data = request.get_json()
@@ -39,7 +39,7 @@ def send_shard():
             return jsonify({"error": "Missing 'address' key in JSON body!"}), 400
 
         try:
-            response = requests.post(target_address, json={"shard": shard, "timestamp": timestamp}, timeout=5)
+            response = requests.post(target_address, json={"shred": shred, "timestamp": timestamp}, timeout=5)
             
             return jsonify({
                 "status": "success",

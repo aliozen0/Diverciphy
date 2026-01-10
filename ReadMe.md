@@ -23,7 +23,7 @@ standard VPNs or TLS tunnels) present a static attack surface. Even when data is
 transmission relies on a singular, traceable path, making it vulnerable to traffic analysis, Man-in-the-
 Middle (MitM) attacks, and brute-force decryption attempts upon interception. This project proposes a
 novel "Distributed Fragmented Data Transmission" architecture that fundamentally redefines endpoint
-security by combining cryptographic payload sharding with multi-path topology obfuscation.
+security by combining cryptographic payload shreding with multi-path topology obfuscation.
 Unlike conventional solutions that merely encapsulate data, this architecture introduces a strict
 "Intranet-to-Internet-to-Intranet" bridge protocol. The core innovation lies in the physical and logical
 isolation of the source and destination endpoints. In this model, the source node (Endpoint A) never
@@ -35,10 +35,10 @@ communicating exclusively with a cluster of specialized "Proxy Gateway Nodes."
 
 The data transmission process executes a "Cryptographic Atomization" strategy. Before leaving the
 secure intranet perimeter, the source payload is encrypted and subsequently fragmented into discrete,
-mathematically interdependent shards. These shards are distributed across distinct gateway nodes
+mathematically interdependent shreds. These shreds are distributed across distinct gateway nodes
 (A1 through A5). Each gateway node operates on an independent operating system with a unique public
 IP address, effectively decoupling the data stream from a single origin point.
-Upon entering the public internet, these shards are routed via disparate, randomized network paths to a
+Upon entering the public internet, these shreds are routed via disparate, randomized network paths to a
 corresponding set of receiver gateways (B1 through B5). This approach mimics the principles of Spread
 Spectrum radio technology applied to IP networks. A malicious actor intercepting a single transmission
 line would capture only a fraction of the payload—a meaningless binary segment that is mathematically
@@ -52,7 +52,7 @@ network topology management. The API functions as a secure bridge between the cl
 (residing within a protected Intranet) and the external, hostile public network.
 Upon receiving a data payload from the client application, the API performs a synchronous
 cryptographic atomization process. Instead of encapsulating the data in a single packet, the API
-executes a sharding algorithm that splits the encrypted payload into  distinct fragments (defaultingto a 5-node configuration). Crucially, the API manages the orchestration of sending these fragments to
+executes a shreding algorithm that splits the encrypted payload into  distinct fragments (defaultingto a 5-node configuration). Crucially, the API manages the orchestration of sending these fragments to
 a pre-authenticated cluster of local proxy nodes (A1 through A5). It handles the handshake protocols,
 error checking, and routing logic required to disperse these fragments across divergent IP addresses
 and operating systems. The API effectively decouples the data source from the transmission medium,
@@ -67,7 +67,7 @@ The Diverciphy architecture is based on a multi-layered communication model:
 
 - A **Dark Node** operating entirely within a secure intranet
 - Multiple **Proxy Gateway Nodes** that act as controlled bridges to the public internet
-- Fragmented, encrypted data shards transmitted over heterogeneous paths
+- Fragmented, encrypted data shreds transmitted over heterogeneous paths
 
 The Dark Node never directly communicates with the public internet. All outgoing and incoming data is handled through gateway nodes, each of which uses a different operating system, network configuration, and public IP address.
 

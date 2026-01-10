@@ -1,6 +1,6 @@
 import os
 import glob
-def get_latest_file(directory, file_extension : str = 'shard_*.pem'):
+def get_latest_file(directory, file_extension : str = 'shred_*.pem'):
     
     list_of_files = glob.glob(os.path.join(directory, file_extension))
     
