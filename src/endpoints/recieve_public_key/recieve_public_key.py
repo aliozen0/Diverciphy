@@ -29,5 +29,5 @@ def write_public_key_to_file(public_key_pem: str, file_path: str):
         print(f"Error writing public key to file: {e}")
 
 if __name__ == '__main__':
-    app.run(debug=True, port=5000)
+    app.run(debug=True, port=5001)
         
