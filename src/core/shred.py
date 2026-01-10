@@ -104,6 +104,14 @@ class Shred:
 
         return shredded_data, encrypted_metadata
 
+    def send_meta_data(self):
+        # Metadata sending logic will be here.
+        pass
+    
+    def send_encrypted_parts(self):
+        # Encrypted parts sending logic will be here.
+        pass
+
 if __name__ == "__main__":
     load_dotenv()
     password = os.getenv("FILE_PASSWORD")

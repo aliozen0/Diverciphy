@@ -1,0 +1,12 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "diverciphy"
+version = "0.2.0"
+dependencies = [
+    "flask",
+    "cryptography",
+    "python-dotenv"
+]
