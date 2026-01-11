@@ -137,4 +137,4 @@ class MasterShredEndpoint:
 if __name__ == '__main__':
     app = Flask(__name__)
     shredder_node = MasterShredEndpoint(app)
-    shredder_node.run(port=6000)
+    shredder_node.run(port=5555)
